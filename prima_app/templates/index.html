@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
-    <ol><li><a href="http://127.0.0.1:8000/prima_app/index">index</a></li>
-        <li><a href="http://127.0.0.1:8000/prima_app/welcome">home page welcome</a></li>
-        <li><a href="http://127.0.0.1:8000/prima_app/menu">menu</a></li>
-        <li><a href="http://127.0.0.1:8000/prima_app/chi_siamo">chi siamo</a></li>
-        <li><a href="http://127.0.0.1:8000/prima_app/variabili">variabili</a></li>
+{% extends 'base.html'%}
+{%block title%}
+	{{block.super}} | Index
+{%endblock title%}
+
+{%block content%}
+    <ol>
+        <li><a href="{% url 'prima_app:index' %}">index</a></li>
+        <li><a href="{% url 'prima_app:home' %}">home page welcome</a></li>
+        <li><a href="{% url 'prima_app:menu' %}">menu</a></li>
+        <li><a href="{% url 'prima_app:chi_siamo' %}">chi siamo</a></li>
+        <li><a href="{% url 'prima_app:variabili' %}">variabili</a></li>
     </ol>
-</body>
-</html>
+
+    <ol>
+        <li><a href="{% url 'seconda_app:if' %}">if</a></li>
+        <li><a href="{% url 'seconda_app:ifelse' %}">ifelse</a></li>
+        <li><a href="{% url 'seconda_app:ifelif' %}">ifelif</a></li>
+        <li><a href="{% url 'seconda_app:for' %}">for</a></li>
+    </ol>
+{%endblock content%}
