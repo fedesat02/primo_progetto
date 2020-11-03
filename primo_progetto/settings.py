@@ -25,7 +25,7 @@ SECRET_KEY = 'g-g8z77nhdyybjs888k7vbemt#1-h28bj2pol6eg+0aekr2go%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fedesat02.eu.pythonanywhere.com']
 
 
 # Application definition
