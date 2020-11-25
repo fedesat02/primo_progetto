@@ -4,16 +4,16 @@ from .models import Articolo, Giornalista
 
 # Create your views here.
 def home(request):
-    return HttpResponse('<h1>Homepage news!</h1>')
-    a = ''
-    g = ''
-
+    a = []
+    g = []
+    
     for art in Articolo.objects.all():
-        a += (art.titolo + '<br>')
+        a.append(art.titolo)
 
     for gio in Giornalista.objects.all():
-        g += (gio.nome + '<br>')
-
-    response = 'articolo:<br>' + a + '<br>Giornalisra<br>' + g
+        g.append(gio.nome)
+    
+    response = str(a) + '<br>' + str(g)
+    print(response)
 
     return HttpResponse('<h1>' + response + '</h1>')
