@@ -9,7 +9,7 @@ def home(request):
     articoli = Articolo.objects.all()
     giornalisti = Giornalista.objects.all()
     context = {"articoli": articoli, "giornalisti": giornalisti}
-    return render(request, 'homepage.html', context)
+    return render(request, 'homepage_news.html', context)
 
 class ArticoloDetailView(DetailView):
     model = Articolo
@@ -22,4 +22,17 @@ class ArticoloListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['articoli'] = Articolo.objects.all()
+        return context
+
+class GiornalistaDetailView(DetailView):
+    model = Giornalista
+    template_name = 'giornalista_detail.html'
+
+class GiornalistaListView(ListView):
+    model = Giornalista
+    template_name = 'lista_giornalisti.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['giornalisti'] = Giornalista.objects.all()
         return context
