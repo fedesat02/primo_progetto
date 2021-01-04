@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{%block title%}
+{{ autore.nome }} {{ autore.cognome }} 
+{%endblock title%}
+
+{%block content%}
+  <h1>{{ autore.nome }}</h1>
+  <h2>{{ autore.cognome }}</h2>
+  <h3>{{ autore.nazione }}</h3>
+{%endblock content%}

@@ -7,6 +7,10 @@ class Genere_SF(models.Model):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        verbose_name = 'Genere'
+        verbose_name_plural = 'Generi'
+
 
 class Autore_SF(models.Model):
     nome = models.CharField(max_length=20)
@@ -15,6 +19,10 @@ class Autore_SF(models.Model):
 
     def __str__(self):
         return self.nome + " " + self.cognome
+
+    class Meta:
+        verbose_name = 'Autore'
+        verbose_name_plural = 'Autori'
 
 
 class Libro_SF(models.Model):
@@ -25,3 +33,7 @@ class Libro_SF(models.Model):
 
     def __str__(self):
         return self.titolo
+
+    class Meta:
+        verbose_name = 'Libro'
+        verbose_name_plural = 'Libri'
